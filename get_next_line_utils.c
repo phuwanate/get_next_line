@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:14:42 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/09 22:46:57 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/10 02:21:23 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strchr(const char *s, int c)
 	while (ptr[i] != '\0')
 	{
 		if (ptr[i] == (char)c)
-			return(&ptr[i]);
+			return (&ptr[i]);
 		i++;
 	}
 	return (NULL);
@@ -68,20 +68,56 @@ char	*ft_strdup(const char *s1)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
-	size_t	len_s1;
-	size_t	len_s2;
-	size_t	size;
+	int		i;
+	int		j;
 
 	if (s1 == NULL || s2 == NULL)
 		return (ft_strdup(""));
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	size = len_s1 + len_s2;
-	ptr = (char *)malloc((size + 1) * sizeof(char));
+	ptr = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (ptr != NULL)
 	{
-		ft_strlcpy(ptr, s1, len_s1 + 1);
-		ft_strlcpy(&ptr[len_s1], s2, len_s2 + 1);
+		i = 0;
+		while (s1[i] != '\0')
+		{
+			ptr[i] = s1[i];
+			i++;
+		}
+		j = 0;
+		while (s2[j] != '\0')
+		{
+			ptr[i + j] = s2[j];
+			j++;
+		}
+		ptr[i + j] = '\0';
 	}
 	return (ptr);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*dst;
+	size_t	i;
+	size_t	j;
+	size_t	n;
+
+	if (s == NULL)
+		return (NULL);
+	if (ft_strlen(s) <= start || len == 0)
+		return (ft_strdup(""));
+	n = ft_strlen(&s[start]);
+	if (len > n)
+		dst = (char *)malloc((n + 1) * sizeof(char));
+	else
+		dst = (char *)malloc((len + 1) * sizeof(char));
+	if (!dst)
+		return (NULL);
+	i = -1;
+	j = 0;
+	while (s[++i])
+	{
+		if (i >= start && j < len)
+			dst[j++] = s[i];
+	}
+	dst[j] = '\0';
+	return (dst);
 }
