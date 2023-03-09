@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:06:08 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 01:38:48 by first            ###   ########.fr       */
+/*   Updated: 2023/03/10 02:42:47 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_clean(char *stash)
 
 	len_stash = ft_strlen(stash);
 	i = 0;
-	while (stash[i] != '\n' || stash[i] != '\0')
+	while (stash[i] != '\n' && stash[i] != '\0')
 		i++;
 	line = ft_substr(stash, 0, i + 1);
 	while ((stash[len_stash] != '\n') && (len_stash != 0))
