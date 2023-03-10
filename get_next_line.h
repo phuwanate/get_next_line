@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 14:46:48 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 15:28:43 by plertsir         ###   ########.fr       */
+/*   Created: 2023/03/10 18:19:56 by plertsir          #+#    #+#             */
+/*   Updated: 2023/03/10 18:20:36 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 1024
+#  define BUFFER_SIZE 0
 # endif
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
