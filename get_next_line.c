@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:06:08 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 11:56:09 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:03:51 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,7 @@ char	*get_next_line(int fd)
 	line = read_file(fd, buff, stash);
 	free(buff);
 	buff = NULL;
-	if (!line)
-		return (NULL);
-	stash = ft_clean(line);
+	if (line)
+		stash = ft_clean(line);
 	return (line);
 }
