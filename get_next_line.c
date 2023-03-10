@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 14:30:47 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 15:29:47 by plertsir         ###   ########.fr       */
+/*   Created: 2023/03/10 18:15:40 by plertsir          #+#    #+#             */
+/*   Updated: 2023/03/10 18:15:41 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,19 +62,19 @@ char	*ft_clean(char *line)
 
 char	*get_next_line(int fd)
 {
-	char			*buff[OPEN_MAX];
+	char			*buff;
 	char			*line;
-	static char		*stash;
+	static char		*stash[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff[fd] = (char *)malloc((BUFFER_SIZE + 1) + sizeof(char));
-	if (!buff[fd])
+	buff = (char *)malloc((BUFFER_SIZE + 1) + sizeof(char));
+	if (!buff)
 		return (NULL);
-	line = read_file(fd, buff[fd], stash);
-	free(buff[fd]);
-	buff[fd] = NULL;
+	line = read_file(fd, buff, stash[fd]);
+	free(buff);
+	buff = NULL;
 	if (line)
-		stash = ft_clean(line);
+		stash[fd] = ft_clean(line);
 	return (line);
 }

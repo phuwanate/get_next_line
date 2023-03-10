@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:32:06 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 15:33:29 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:01:04 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 1024
+#  define BUFFER_SIZE 0
 # endif
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
-char    *get_next_line(int fd);
+char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
