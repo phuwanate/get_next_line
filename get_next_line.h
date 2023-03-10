@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:19:56 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 18:20:36 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/10 19:06:25 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 0
+#  define BUFFER_SIZE 42
 # endif
 
 # include <stdlib.h>
