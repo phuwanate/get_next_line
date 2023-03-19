@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:33:44 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 18:03:25 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/19 22:35:21 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,14 @@ char	*read_file(int fd, char *buff, char *stash)
 char	*ft_clean(char *line)
 {
 	int		i;
-	size_t	len_stash;
 	char	*stash;
 
-	len_stash = ft_strlen(line);
 	i = 0;
 	while (line[i] != '\n' && line[i] != '\0')
 		i++;
 	if (line[i] == '\0' || line[1] == '\0')
 		return (NULL);
-	stash = ft_substr(line, i + 1, len_stash - i);
+	stash = ft_substr(line, i + 1, ft_strlen(line) - i);
 	if (*stash == '\0')
 	{
 		free(stash);
