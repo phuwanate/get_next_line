@@ -6,9 +6,14 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:15:40 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 18:20:47 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/19 22:32:05 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//read() return : 0 = the file is read to the end.
+//read() return : -1 = an error occurs.
+//read() return : the number of bytes read (if it return successfully).
+//read_file function will add null terminated in every round.
 
 #include "get_next_line.h"
 
@@ -41,16 +46,14 @@ char	*read_file(int fd, char *buff, char *stash)
 char	*ft_clean(char *line)
 {
 	int		i;
-	size_t	len_stash;
 	char	*stash;
 
-	len_stash = ft_strlen(line);
 	i = 0;
 	while (line[i] != '\n' && line[i] != '\0')
 		i++;
 	if (line[i] == '\0' || line[1] == '\0')
 		return (NULL);
-	stash = ft_substr(line, i + 1, len_stash - i);
+	stash = ft_substr(line, i + 1, ft_strlen(line) - i);
 	if (*stash == '\0')
 	{
 		free(stash);
