@@ -6,11 +6,11 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:34:37 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/10 18:00:46 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/20 18:00:33 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
 {

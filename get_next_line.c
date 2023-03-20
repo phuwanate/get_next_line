@@ -6,14 +6,9 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:15:40 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/19 22:32:05 by first            ###   ########.fr       */
+/*   Updated: 2023/03/20 16:59:24 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//read() return : 0 = the file is read to the end.
-//read() return : -1 = an error occurs.
-//read() return : the number of bytes read (if it return successfully).
-//read_file function will add null terminated in every round.
 
 #include "get_next_line.h"
 
@@ -80,4 +75,21 @@ char	*get_next_line(int fd)
 	if (line)
 		stash[fd] = ft_clean(line);
 	return (line);
+}
+
+#include <stdio.h>
+#include <fcntl.h>
+
+int main()
+{
+	int	fd;
+	char	*line_read;
+
+	fd = open("get_next_line.c", O_RDWR);
+	do
+	{ 
+		line_read = get_next_line(fd);
+		printf("%s", line_read);
+	}while(line_read != NULL);
+	return (0);
 }

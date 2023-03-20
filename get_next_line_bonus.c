@@ -6,11 +6,11 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:33:44 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/19 22:35:21 by first            ###   ########.fr       */
+/*   Updated: 2023/03/20 18:02:11 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_file(int fd, char *buff, char *stash)
 {
