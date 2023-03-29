@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 15:33:44 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/20 18:02:11 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/03/29 13:17:27 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = (char *)malloc((BUFFER_SIZE + 1) + sizeof(char));
+	buff = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
 		return (NULL);
 	line = read_file(fd, buff, stash[fd]);
